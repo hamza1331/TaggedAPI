@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const UserSchema = new mongoose.Schema({
   email:{
       type:String,
-      required:[true,'Email is required']
+      required:[true,'Email is required'],
+      unique:true
   },
   fName:{
       type:String,
@@ -10,7 +11,7 @@ const UserSchema = new mongoose.Schema({
   },
   lName:{
       type:String,
-      required:[true,'Last Name is required']
+      required:[true,'Last Name is required'],
   },
   bDay:{
       type:String,
@@ -57,8 +58,10 @@ const UserSchema = new mongoose.Schema({
   isLoggedIn:{
       type:Boolean,
       default:false
+  },
+  age:{
+      type:Number
   }
-
 
 });
 
